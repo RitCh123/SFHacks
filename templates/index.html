@@ -1,0 +1,499 @@
+<html>
+  <head>
+    <title>
+      SFHacks @ Saint Francis
+    </title>
+    <!-- import bootstrap for the collapsible groups-->
+    <!-- meta tag for responsiveness on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    
+    <!-- Import spectre.css for the CSS formatting. Find documentation from https://picturepan2.github.io/spectre/layout/navbar.html -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css" integrity="sha512-9RIcp1f4CE6dEuYX9085tXaEbYd1ap04d2Av1ub/dwuT33WbfbHStDdQ+shKrp5wzZzleh5DOg+7ABSnaQP/nQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <!-- fullpage.js installation using CDNJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- font awesome for highly useful fonts -->
+    <script src="https://kit.fontawesome.com/55da53258f.js" crossorigin="anonymous"></script>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/logo-icon" href="static/assets/favicon/logo.png">
+  </head>
+
+  <body>
+    <!-- check if mobile -->
+    <script>
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        //make changes to the styling of the title
+
+      }
+    </script>
+    <div id="fullpage" style="margin-left: 5vh">
+      <div class="section">
+        <!-- the navbar -->
+        <div style="margin-left: 5vh; margin-right: 5vh; margin-top: 2vh">
+          <header class="navbar">
+            <section class="navbar-section">
+              <a href="#" class="btn btn-link">Docs</a>
+              <a href="#" class="btn btn-link">Resources</a>
+            </section>
+            <section class="navbar-center">
+              <a href="{{url_for('homePage')}}"><img src="static/assets/favicon/logo.png" alt="LancerHacks Logo" height="60" width="60"></a>
+            </section>
+            <section class="navbar-section">
+              <a href="https://twitter.com/SFHSLancerHacks" class="btn btn-link" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+              <a href="https://github.com/sfhacks" class="btn btn-link" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+              <a href="https://www.youtube.com/playlist?list=PLeanZErs0eh76AumasIiE5nJifL7N9mbT" class="btn btn-link" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+              <a href="https://drive.google.com/open?id=1zV616szAIrJNdaz2Qz5dzlKIwVX3ijU9" class="btn btn-link" target="_blank"><i class="fab fa-google-drive fa-2x"></i></a>
+            </section>
+          </header>
+        </div>
+        <div class="text-large text-left">
+          <h1 style="font-size: 9vw;" id="title">
+            SFHacks
+          </h1>
+        </div>
+        <div class="text-small text-left">
+          <p style="text-decoration: none !important; font-size: 3.5vh">SFHacks is the programming club of <a href="https://www.sfhs.com" target="_blank">Saint Francis High School</a>. We run tutorials, competitions and even <a href="https://lancerhacks.com" target="_blank">hackathons</a> in collaboration with other schools and sponsors.</p>
+        </div>
+        <div class="text-center">
+          <div class="columns col-oneline">
+            <div class="column col-4">
+              <div class="card">
+                <div class="card-image" style="margin-top: 2vh">
+                  <i class="fas fa-laptop fa-3x"></i>
+                </div>
+                <div class="card-header">
+                  <div class="card-title h5">4+ Hackathons Organized</div>
+                  <div class="card-subtitle text-gray"></div>
+                </div>
+                <div class="card-body">
+                  We're excited to introduce LancerHacks every year, which lots of planning discussion before each event.
+                </div>
+                <div class="card-footer">
+                  <button class="btn btn-primary">See More</button>
+                </div>
+              </div>
+            </div>
+            <div class="column col-4">
+              <div class="card" style="">
+                <div class="card-image" style="margin-top: 2vh">
+                  <i class="fas fa-user-friends fa-3x"></i>
+                </div>
+                <div class="card-header">
+                  <div class="card-title h5">50+ Active Club Members</div>
+                  <div class="card-subtitle text-gray"></div>
+                </div>
+                <div class="card-body">
+                 Each week, the club gets together for some friendly algorithm competitions or lectures about new fields of programming.
+                </div>
+                <div class="card-footer">
+                  <button class="btn btn-success">Explore</button>
+                </div>
+              </div>
+            </div>
+            <div class="column col-4">
+              <div class="card" style="width:93.5%">
+                <div class="card-image" style="margin-top: 2vh">
+                  <img src="static/assets/images/lhavatar.png" height="48" width="48">
+                </div>
+                <div class="card-header">
+                  <div class="card-title h5">LancerHacks</div>
+                  <div class="card-subtitle text-gray"></div>
+                </div>
+                <div class="card-body">
+                 The final hackathon is hosted by Saint Francis and invites tons of other schools to compete and learn programming together!
+                </div>
+                <div class="card-footer">
+                  <button class="btn btn-error">Share</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="section">
+        <!-- one line columns -->
+        <div class="columns col-online">
+          <div class="column col-5">
+            <h2 style="font-size: 5vw;">
+                LancerHacks
+            </h2>
+            <!-- timeline -->
+            <div class="timeline">
+              <div class="timeline-item" id="timeline-example-1">
+                <div class="timeline-left">
+                  <a class="timeline-icon" href="#" data-tooltip="December 2020"></a>
+                </div>
+                <div class="timeline-content">
+                  <div class="tile-content">
+                    <p class="tile-subtitle">December 2021</p>
+                    <p class="tile-title">
+                      <strong>Event:</strong> Initial planning of LancerHacks begins. Start of operations (such as logistical planning and marketing operations) start in order to raise awareness, funding, and sponsors for the hackathon.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item" id="timeline-example-2">
+                <div class="timeline-left">
+                  <a class="timeline-icon icon-lg" href="#">
+                    <i class="icon icon-check"></i>
+                  </a>
+                </div>
+                <div class="timeline-content">
+                  <!-- tiles structure -->
+                  <div class="tile-content">
+                    <p class="tile-subtitle">February 2022</p>
+                    <p class="tile-title">
+                      <strong>Event:</strong> LancerHacks begins. The event has many schools competing and designing new things pertaining to computer science. Winners and prizes are most likely announced on the same day.
+                    </p>
+                  </div>
+                </div>  
+              </div>
+              <div class="timeline-item" id="timeline-example-3">
+                <div class="timeline-left">
+                  <a class="timeline-icon icon-lg" href="#">
+                    <i class="icon icon-check"></i>
+                  </a>
+                </div>
+                <div class="timeline-content">
+                  <!-- tiles structure -->
+                  <div class="tile-content">
+                    <p class="tile-subtitle">March 2022</p>
+                    <p class="tile-title">
+                      <strong>Event: </strong>
+                      LancerHacks ends. All prizes and winners will be announced and appropriately distributed.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column col-5">
+            <div class="text-center">
+              <h2 style="font-size: 5vw; text-decoration: underline">
+                What is LancerHacks?
+              </h2>
+              <div class="text-left">
+                <p>LancerHacks is a 12-hour student-run high school hackathon hosted by sfhacks.
+                At the hackathon, students will work in teams on innovative projects and participate in faction-based contests.
+                Our third annual event will be in 2020 on Saint Francis High School's campus in Mountain View, CA.</p>
+              </div>
+              <h2 style="font-size: 3.5vw; text-decoration: underline">
+                FAQ
+              </h2>
+              <div class="text-left">
+                <!-- accordians for the FAQ -->
+                <div class="accordion">
+                  <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden>
+                  <label class="accordion-header" for="accordion-1">
+                    <i class="icon icon-arrow-right mr-1"></i>
+                    <strong>Do I need a team?</strong>
+                  </label>
+                  <div class="accordion-body">
+                    <p>No, but we strongly encourage collaboration, so if you don’t have a team, let us know on the RSVP form and we’ll help you find one.</p>
+                  </div>
+                </div>
+                <div class="accordion">
+                  <input type="checkbox" id="accordion-2" name="accordion-checkbox" hidden>
+                  <label class="accordion-header" for="accordion-2">
+                    <i class="icon icon-arrow-right mr-1"></i>
+                    <strong>Do I need any prior experience in computer science?</strong>
+                  </label>
+                  <div class="accordion-body">
+                    <p>Nope! Hackathons are a great place to learn and gain experience; we have plenty of workshops and mentors.</p>
+                  </div>
+                </div>
+                <div class="accordion">
+                  <input type="checkbox" id="accordion-3" name="accordion-checkbox" hidden>
+                  <label class="accordion-header" for="accordion-3">
+                    <i class="icon icon-arrow-right mr-1"></i>
+                    <strong>Do I have to stay for the whole event?</strong>
+                  </label>
+                  <div class="accordion-body">
+                    <p>No. We understand that everyone has busy schedules and may not be able to stay for the entire event. Contact us to make arrangements.</p>
+                  </div>
+                </div>
+                <div class="accordion">
+                  <input type="checkbox" id="accordion-4" name="accordion-checkbox" hidden>
+                  <label class="accordion-header" for="accordion-4">
+                    <i class="icon icon-arrow-right mr-1"></i>
+                    <strong>Is it free?</strong>
+                  </label>
+                  <div class="accordion-body">
+                    <p>Yes! Admission, swag, workshops -- everything is free.</p>
+                  </div>
+                </div>
+                <div class="accordion">
+                  <input type="checkbox" id="accordion-5" name="accordion-checkbox" hidden>
+                  <label class="accordion-header" for="accordion-5">
+                    <i class="icon icon-arrow-right mr-1"></i>
+                    <strong>Who can attend?</strong>
+                  </label>
+                  <div class="accordion-body">
+                    <p>Anyone currently in high school or 8th grade.</p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>  
+        </div>
+      </div>     
+          
+    
+      <div class="section">
+        <div class="text-center">
+          <h2 style="font-size: 7vw;">
+                Projects
+          </h2>
+          <h4>Our club has drawn inspiration from the many presentations and workshops and created our own projects!</h4>
+        </div>
+        <div class="text-left">
+          <div class="columns col-oneline">
+            <div class="column col-3">
+              <div class="card">
+              <div class="card-image">
+                <center><img src="https://sfhacks.club/images/projects/peer2peer.png" class="img-responsive" height="120" width="120"></center>
+              </div>
+              <div class="card-header">
+                <div class="card-title h5">Peer to Peer</div>
+                <div class="card-subtitle text-gray">Education</div>
+              </div>
+              <div class="card-body">
+                Peer2Peer connects volunteer tutors to students in need of academic help based on subjects and physical proximity with a rapid, minimalist front-end and a powerful RESTful backend and database.
+
+              </div>
+              <div class="card-footer">
+                <center><a href="https://github.com/p2p-app/p2p-about" class="btn btn-link" target="_blank"><i class="fab fa-github fa-2x"></i></a></center>
+              </div>
+            </div>
+            </div>
+            <div class="column col-3">
+              <div class="card">
+                <div class="card-image">
+                  <center><img src="https://sfhacks.club/images/projects/drone-vr.png" class="img-responsive" height="120" width="120" style="margin-top: 2vh"></center>
+                </div>
+                <div class="card-header">
+                  <div class="card-title h5">Drone VR</div>
+                  <div class="card-subtitle text-gray">Technology</div>
+                </div>
+                <div class="card-body">
+                  Drone VR was created at MenloHacks 2016 with the goal of combining drones and virtual reality. The result was a setup where the user can control the drone with a PS3 controller while wearing a Google Cardboard.
+                </div>
+                <div class="card-footer">
+                  <center><a href="https://devpost.com/software/drone-virtual-reality" class="btn btn-link" target="_blank"><i class="fab fa-codepen fa-2x"></i></a></center>
+                </div>
+              </div>
+            </div>
+            <div class="column col-3">
+              <div class="card">
+                <div class="card-image">
+                  <center><img src="https://sfhacks.club/images/projects/twit4java.png" class="img-responsive" height="120" width="120" style="margin-top: 2vh"></center>
+                </div>
+                <div class="card-header">
+                  <div class="card-title h5">Twit4Java</div>
+                  <div class="card-subtitle text-gray">Programming</div>
+                </div>
+                <div class="card-body">
+                  Twit4Java is a Twitter client written entirely in Java. Currently, it allows users to compose tweets, view their recent Timeline, and glance at complex Profile information on other users.
+                </div>
+                <div class="card-footer">
+                  <center><a href="https://www.williamchern.com/Twit4Java/" class="btn btn-link" target="_blank"><i class="fab fa-github fa-2x"></i></a></center>
+                </div>
+              </div>
+            </div>
+            <div class="column col-3">
+                <div class="card" style="width: 93.5%">
+                  <div class="card-image">
+                    <center><img src="https://sfhacks.club/images/projects/fingertracker.png" class="img-responsive" height="120" width="120" style="margin-top: 2vh"></center>
+                  </div>
+                  <div class="card-header">
+                    <div class="card-title h5">FingerTracker</div>
+                    <div class="card-subtitle text-gray">Artificial Intelligence</div>
+                  </div>
+                  <div class="card-body">
+                    Using the OpenCV framework, FingerTracker is a gesture recognizer that can detect how many fingers the user is holding up.
+                  </div>
+                  <div class="card-footer">
+                    <center><a href="https://github.com/AndrewKe/FingerTracker" class="btn btn-link" target="_blank"><i class="fab fa-github fa-2x"></i></a></center>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Peer to Peer Card -->
+          
+        </div>
+        <div class="section">
+        <div class="text-center">
+          <h2 style="font-size: 7vw;">
+                Awards
+          </h2>
+          <h4>With our knowledge and expertise of programming, we sought to compete and nurture our skills in a variety of competitions. The most prominent of them was the <i>Congressional App Challenge.</i></h4>
+        <div class="text-left">
+          <div class="columns col-oneline">
+            <div class="column col-3">
+              <div class="card">
+              <div class="card-image">
+                <center><img src="https://sfhacks.club/images/awards/congressional-app.jpg" class="img-responsive" height="120" width="120"></center>
+              </div>
+              <div class="card-header">
+                <div class="card-title h5">Congressional App Challenge</div>
+                <div class="card-subtitle text-gray">Peer2Peer</div>
+              </div>
+              <div class="card-body">
+                DriveSafe, submitted in 2015 by Andrew Ke, Arnav Gudibande, and Nishan D'Souza, won 2nd in the same district and received recognition from the US Secretary of Transportation, Anthony Foxx.    
+              </div>
+              <div class="card-footer">
+                <div class="popover popover-right">
+                  <button class="btn btn-primary">Learn More</button>
+                  <div class="popover-container">
+                    <div class="card">
+                      <div class="card-header">
+                        Peer2Peer
+                      </div>
+                      <div class="card-body">
+                        Peer2Peer won 1st in the 18th Congressional District of California.
+                      </div>
+                      <div class="card-footer">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="column col-3">
+              <div class="card">
+                <div class="card-image">
+                  <center><img src="https://sfhacks.club/images/awards/hpi.png" class="img-responsive" height="120" width="120" style="margin-top: 2vh"></center>
+                </div>
+                <div class="card-header">
+                  <div class="card-title h5">Harker Invitational</div>
+                  <div class="card-subtitle text-gray">Invitational</div>
+                </div>
+                <div class="card-body">
+                  At HPI, the team of William Chern, Arnav Gudibande, and Andrew Ke won 1st place in the novice division.
+                </div>
+                <div class="card-footer">
+                  <div class="popover popover-top">
+                    <button class="btn btn-primary">Learn More</button>
+                    <div class="popover-container">
+                      <div class="card">
+                        <div class="card-header">
+                          Harker Invitational
+                        </div>
+                        <div class="card-body">
+                          This programming invitational was an exciting accomplishment as SFHacks won 1st place.
+                        </div>
+                        <div class="card-footer">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column col-3">
+              <div class="card">
+                <div class="card-image">
+                  <center><img src="https://sfhacks.club/images/awards/codequest.jpg" class="img-responsive" height="120" width="120" style="margin-top: 2vh"></center>
+                </div>
+                <div class="card-header">
+                  <div class="card-title h5">Lockheed Martin CodeQuest</div>
+                  <div class="card-subtitle text-gray">CodeQuest</div>
+                </div>
+                <div class="card-body">
+                  At CodeQuest, the team of Arnav Gudibande, Nishan D'Souza, and Andrew Ke won 2nd place in Advanced and nationally placed in the top 15.
+                </div>
+                <div class="card-footer">
+                  <div class="popover popover-top">
+                    <button class="btn btn-primary">Learn More</button>
+                    <div class="popover-container">
+                      <div class="card">
+                        <div class="card-header">
+                          CodeQuest
+                        </div>
+                        <div class="card-body">
+                          <strong>Nationally</strong>, our team at SFHacks won top 15 in this competition.
+                        </div>
+                        <div class="card-footer">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column col-3">
+                <div class="card" style="width: 93.5%">
+                  <div class="card-image">
+                    <center><img src="https://sfhacks.club/images/awards/ohacks.jpg" class="img-responsive" height="120" width="120" style="margin-top: 2vh"></center>
+                  </div>
+                  <div class="card-header">
+                    <div class="card-title h5">OHacks</div>
+                    <div class="card-subtitle text-gray">Hackathon</div>
+                  </div>
+                  <div class="card-body">
+                    At OHacks, a hackathon at Oakland Technical High School, the team of Rohan Taori, Abinesh Sarvepalli, Ryan Hoque, and Amog Kamesetty won 1st for Rekt, a collision companion app.
+                  </div>
+                  <div class="card-footer">
+                    <div class="popover popover-left">
+                    <button class="btn btn-primary">Learn More</button>
+                    <div class="popover-container">
+                      <div class="card">
+                        <div class="card-header">
+                          OHacks
+                        </div>
+                        <div class="card-body">
+                          During this competition (hackathon), our team won 1st for designing an app for crash collisions.
+                        </div>
+                        <div class="card-footer">
+                        </div>
+                      </div>
+                    </div>
+                  </div>                    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="text-right" style="margin-top:3vh">
+          
+               <p>© 2021 SFHacks. All Rights Reserved.</p>
+            
+          </div>
+                  
+         
+        </div>
+
+      </div>
+    </div>
+    <!-- intializing the fullpage js script> -->
+    <script>
+      new fullpage('#fullpage', {
+        //options here
+        autoScrolling:true,
+        scrollHorizontally: true
+      });
+    </script>
+    <!-- styles for background images -->
+    <style>
+      .section {
+        background-size: cover;
+      }
+      body {
+        background-image: linear-gradient(to right, #f3f3ff, #daf9ff)
+      }
+    </style>
+    
+  </body>
+</html>
