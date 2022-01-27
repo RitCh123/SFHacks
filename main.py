@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_file, redirect, url_for, request, flash
+from flask import Flask, render_template, send_file, redirect, url_for, request, flash, make_response, jsonify
 import os
 
 from bs4 import BeautifulSoup
@@ -31,15 +31,21 @@ def attendance_form():
   return redirect("https://tinyurl.com/sfhacksattendance")
 @app.route('/admin/signin', methods = ['GET', 'POST'])
 def admin_register():
+  if request.cookies.get('login_board') == "True":
+    return redirect(url_for('admin_page'))
   if request.method == 'POST':
     if request.form['username'] == os.environ['USERNAME'] and request.form['password'] == os.environ['PASSWORD']:
-      return redirect(url_for('admin_page'))
+      resp = make_response(redirect(url_for('admin_page')))
+      resp.set_cookie('login_board', "True", max_age = 900)
+      return resp
     else:
       flash("Incorrect login credentails")
   return render_template("admin/form.html")
 
 @app.route('/admin/home', methods = ['GET', "POST"])
 def admin_page():
+  if (request.cookies.get('login_board')) != "True":
+    return redirect(url_for('admin_register'))
   #scrape calendar for admin dashboard
   url = 'https://www.sfhs.com/calendar'
 
