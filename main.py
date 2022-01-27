@@ -93,7 +93,7 @@ def admin_page():
       labels.append(data['Attendance Summary'])
       attendance.append(data[''])
 
-    return render_template("/admin/home.html", dates = pass_list, labels = labels, data = attendance)
+  return render_template("/admin/home.html", dates = pass_list, labels = labels, data = attendance)
   
 
 app.run(host='0.0.0.0', port=8080, debug=True)

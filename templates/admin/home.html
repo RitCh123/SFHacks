@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -253,7 +254,6 @@
               </tr>
             {% endfor %}
 
-            <!-- More people... -->
           </tbody>
         </table>
       </div>
@@ -263,7 +263,38 @@
 
         
       </div>
+      <br>
+      <div style="font-size: 2em; text-decoration: underline; margin-bottom: 2vh" id="">
+          Attendance
+        </div>
+      <div style="height: 40vh; width: 95vw">
+        <canvas id="myChart"></canvas>
+      </div>
       
+      <script>
+        const ctx = document.getElementById('myChart');
+        const labels = {{labels | safe}};
+
+        const data = {
+          labels: labels,
+          datasets: [{
+            label: 'Attendance',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: {{data | safe}},
+          }]
+        };
+
+        const config = {
+          type: 'line',
+          data: data,
+          options: {}
+        };
+        const myChart = new Chart(
+          document.getElementById('myChart'),
+          config
+        );
+      </script>
       <!-- /End replace -->
     </div>
   </main>
