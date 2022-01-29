@@ -110,15 +110,26 @@
                     </div>
                   </div>
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap">
+                <td class="px-6 py-4 whitespace-wrap" style="max-width: 20em; overflow-wrap: break-word;">
                   {{note.info}}
                   <input type="hidden" name="info" value="{{note.info}}">
                 </td>
-                
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {{note.priority}}
-                  <input type="hidden" name="priority" value="{{note.priority}}">
-                </td>
+                {% if note.priority == "Easy"%}
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500" style="">
+                    {{note.priority}}
+                    <input type="hidden" name="priority" value="{{note.priority}}">
+                  </td>
+                {%elif note.priority == "Medium" %}
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-orange-500" style="">
+                    {{note.priority}}
+                    <input type="hidden" name="priority" value="{{note.priority}}">
+                  </td>
+                {%else%}
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-red-500" style="">
+                    {{note.priority}}
+                    <input type="hidden" name="priority" value="{{note.priority}}">
+                  </td>
+                {%endif%}
 
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {{note.date}}
