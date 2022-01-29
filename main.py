@@ -1,4 +1,11 @@
 from flask import Flask, render_template, send_file, redirect, url_for, request, flash, make_response, jsonify
+from datetime import date
+
+from flask_sqlalchemy import SQLAlchemy
+
+
+
+
 
 
 import json
@@ -21,6 +28,23 @@ app = Flask('app')
 #secret key
 
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
+
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///notes.db'
+db = SQLAlchemy(app)
+
+
+#define database model
+
+class Notes(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  title = db.Column(db.String(), nullable = False)
+  info = db.Column(db.String(), nullable = False)
+  date = db.Column(db.String(), nullable = False)
+  priority = db.Column(db.String(), nullable = False)
+
+
 
 @app.route('/')
 def homePage():
@@ -104,6 +128,24 @@ def admin_page():
 
   return render_template("/admin/home.html", dates = pass_list, labels = labels, data = attendance)
   
+
+@app.route('/admin/notes', methods=['GET', "POST"])
+def admin_notes():
+  if request.method == "POST":
+    new_note = Notes(title = request.form['title'], info = request.form['info'], date = date.today().strftime("%m/%d/%Y"), priority = request.form['priority'])
+    db.session.add(new_note)
+    db.session.commit()
+  return render_template('/admin/notes/notes.html', notes = Notes.query.all())
+
+@app.route('/admin/notes/delete')
+def delete_note():
+  args = dict(request.args)
+  delete_note = Notes.query.filter_by(title=args['title'], info=args['info'], priority=args['priority'], date=args['date']).first()
+
+  if delete_note:
+    db.session.delete(delete_note)
+    db.session.commit()
+    return redirect(url_for('admin_notes'))
 
 app.run(host='0.0.0.0', port=8080, debug=True)
 
